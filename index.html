@@ -117,7 +117,7 @@
           9
         </button>
 
-        <button class = 'button' onclick="console.log(output);">
+        <button class = 'button' onclick="calculation();">
           +/-
         </button>
 
@@ -171,9 +171,23 @@
         equation += number1;
         number1 = '';
         equation += operator1;
+        operator2 = temp
+        number2 = number1
         document.querySelector('.result')
         .innerHTML = `<p>${operator1}</p>`
       }
+
+      function calculation() { 
+        if (operator2 === 1) {output = number2 + number1}
+        else if (operator2 === 2) {output = number2 - number1}
+        else if (operator2 === 3) {output = number2 * number1}
+        else if (operator2 === 4) {output = number2 / number1}
+        document.querySelector('.result')
+        .innerHTML = `<p>${output}</p>`
+        number1 = '';
+      }
+      
+      
     </script>
   </body>
 </html>
