@@ -81,51 +81,51 @@
     
     <div class = "lowerpart">
       <div class = 'dividnumbers'>
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('1');">
           1
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('2');">
           2
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('3');">
           3
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('4');">
           4
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('5');">
           5
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('6');">
           6
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('7');">
           7
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('8');">
           8
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed('9');">
           9
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="console.log(output);">
           +/-
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="buttonPressed(0);">
           0
         </button>
 
-        <button class = "button">
+        <button class = "button" onclick="console.log(number1 + 'W' + equation + 'W' + operator1);">
           .
         </button>
 
@@ -133,19 +133,19 @@
 
       <div class = 'dividoperators'>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="operator(1);">
           +
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="operator(2);">
           -
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="operator(3);">
           *
         </button>
 
-        <button class = 'button'>
+        <button class = 'button' onclick="operator(4);">
           /
         </button>
 
@@ -154,7 +154,26 @@
     </div>
 
     <script>
+      let output = 0
+      let number1 = ''
+      let equation = []
+      function buttonPressed(temp) {
+        number1 += temp;
+        document.querySelector('.result')
+        .innerHTML = `<p>${number1}</p>`;
+      }
 
+      function operator(temp) {
+        if (temp === 1) {operator1 = "+"}
+        else if (temp === 2) {operator1 = "-"}
+        else if (temp === 3) {operator1 = "*"}
+        else if (temp === 4) {operator1 = "/"}
+        equation += number1;
+        number1 = '';
+        equation += operator1;
+        document.querySelector('.result')
+        .innerHTML = `<p>${operator1}</p>`
+      }
     </script>
   </body>
 </html>
