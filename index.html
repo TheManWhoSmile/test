@@ -125,7 +125,8 @@
           0
         </button>
 
-        <button class = "button" onclick="console.log(number1 + 'W' + equation + 'W' + operator1);">
+        <button class = "button" onclick="console.log(`Output: ${output}
+Number2: ${number2}`);">
           .
         </button>
 
@@ -169,15 +170,16 @@
         else if (temp === 3) {operator1 = "*"}
         else if (temp === 4) {operator1 = "/"}
         equation += number1;
-        number1 = '';
+        number2 = Number(number1)
         equation += operator1;
         operator2 = temp
-        number2 = number1
+        number1 = '';
         document.querySelector('.result')
         .innerHTML = `<p>${operator1}</p>`
       }
 
       function calculation() { 
+        number1 = Number(number1)
         if (operator2 === 1) {output = number2 + number1}
         else if (operator2 === 2) {output = number2 - number1}
         else if (operator2 === 3) {output = number2 * number1}
